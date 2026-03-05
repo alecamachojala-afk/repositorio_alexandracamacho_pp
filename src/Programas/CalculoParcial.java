@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class CalculoParcial {
 public static void main(String args[]){
 String empleado;
-double horast , tarifahora , sueldobruto , desc , sueldon;
+double horast , tarifahora , sueldobruto , desc , sueldon , eps;
 Scanner lectura= new Scanner(System.in);
 //Datos
 System.out.print("Nombre de empleado:");
@@ -24,10 +24,12 @@ tarifahora=lectura.nextDouble();
 //Proceso
 sueldobruto=horast*tarifahora;
 desc=sueldobruto*0.13;
-sueldon=sueldobruto-desc;
+eps=sueldobruto*0.05;
+sueldon=sueldobruto-desc-eps;
 //Salida
 System.out.println("Sueldo bruto:"+sueldobruto);
-System.out.println("Descuento:"+desc);
+System.out.println("Descuento seguro:"+desc);
+System.out.println("Descuento por eps:"+eps);
 System.out.println("Sueldo Neto:"+sueldon);
 }
 }
